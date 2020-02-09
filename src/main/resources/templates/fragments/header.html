@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout"
+      th:fragment="header">
+<head>
+    <meta charset="UTF-8">
+    <meata name="viewpoint" content=""width="device-width,initial-scale=1,shrink-to-fit=no"></meata>
+    <link href="../../css/tether.scss" th:href="@{/css/tether.scss}" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" rel="stylesheet">
+    <link href="../../css/fontawesome.min.css" th:href="@{/css/fontawesome.min.css}" rel="stylesheet">
+    <link href="../../css/nprogress.css" th:href="@{/css/nprogress.css}" rel="stylesheet">
+    <link href="../../css/thinker-md.vendor.css" th:href="@{/css/thinker-md.vendor.css}" rel="stylesheet">
+    <link href="../../css/jquery.tagsinput.css" th:href="@{/css/bootstrap-tagsinput.css}" rel="stylesheet">
+    <link href="../../css/component-chosen.min.css" th:href="@{/css/component-chosen.min.css}" rel="stylesheet">
+    <link href="../../css/toastr.min.css" th:href="@{/css/toastr.min.css}" rel="stylesheet">
+    <link href="../../css/cropbox.css" th:href="@{/css/cropbox.css}" rel="stylesheet">
+    <link href="../../css/style.css" th:href="@{/css/style.css}" rel="stylesheet">
+    <link href="../../css/blog.css" th:href="@{/css/blog.css}" rel="stylesheet">
+    <link href="../../css/thymeleaf-bootstrap-paginator.css" th:href="@{/css/thymeleaf-bootstrap-paginator.css}" rel="stylesheet">
+</head>
+<body>
+<div>
+    <h1 class="text-center">Bootstrap</h1>
+    <a href="/users" class="btn btn-default"th:href="@{~/users}">返回首页</a>
+</div>
+<nav class="navbar navbar-inverse bg-inverse navbar-toggleable-md">
+    <div class="container">
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarsContainer">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="/" th:href="@{~/}">
+            Gigger
+        </a>
+        <div id="navbarsContainer" class="collapse navbar-collapse">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a href="/users" th:href="@{~/users}" class="nav-link">首页<span class="sr-only"></span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</body>
+</html>
