@@ -6,18 +6,18 @@
 </head>
 <body>
 <div class="container blog-content-container">
-    <form th:action="@{~/login}" method="post">
+    <form th:action="@{~/login}" method="post"><!--securityConfig自动拦截post并判断-->
         <h2>请登录</h2>
         <div class="form-group col-md-5">
-            <label for="username" class="form-control">账号</label>
+            <label for="username" class="col-form-label">UserName</label>
             <input type="text" class="form-control" id="username" name="username" maxlength="50">
         </div>
         <div class="form-group col-md-5">
-            <label for="password" class="form-control">密码</label>
+            <label for="password" class="col-form-label">Password</label>
             <input type="password" class="form-control" id="password" name="password" maxlength="50">
         </div>
         <div class="form-group col-md-5">
-            <button type="submit" class="btn btn-primary">登录</button>
+            <button type="submit" class="btn btn-primary">Login</button>
         </div>
         <div class="col-md-5" th:if="${loginError}">
             <p class="blog-label-error" th:text="${errorMsg}"></p>

@@ -2,7 +2,7 @@ buildscript {
 	ext['thymeleaf.version'] = '3.0.11.RELEASE'
 	ext['thymeleaf-layout-dialect.version'] = '2.0.0'
 	ext['hibernate.version'] = '5.2.8.Final'
-	//ext['thymeleaf-extras-springsecurity4.version'] = '3.0.2.RELEASE'
+	ext['thymeleaf-extras-springsecurity4.version'] = '3.0.2.RELEASE'
 }
 plugins {
 	id 'org.springframework.boot' version '2.2.4.RELEASE'
