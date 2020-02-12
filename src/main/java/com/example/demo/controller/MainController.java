@@ -27,4 +27,8 @@ public class MainController {
         model.addAttribute("errorMsg","登陆失败，用户名或密码错误");
         return "login";
     }
+    @GetMapping("/register")
+    public String register(){
+        return "register";
+    }
 }

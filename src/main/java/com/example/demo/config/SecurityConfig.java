@@ -5,6 +5,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
@@ -20,7 +21,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     @Autowired
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception{
-        auth.inMemoryAuthentication()//认证信息存储在内存当中的
-                .withUser("miaozheng").password("123456").roles("ADMIN");//初始化用户
+        //auth.inMemoryAuthentication()//认证信息存储在内存当中的
+                //.withUser("miaozheng").password("123456").roles("ADMIN");//初始化用户
+        auth.inMemoryAuthentication().passwordEncoder(new BCryptPasswordEncoder()).withUser("miaozheng").password(new BCryptPasswordEncoder().encode("123456")).roles("ADMIN");
+
     }
 }
