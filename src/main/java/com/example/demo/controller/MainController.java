@@ -1,12 +1,29 @@
 package com.example.demo.controller;
 
+import com.example.demo.domain.Authority;
+import com.example.demo.domain.User;
+import com.example.demo.service.AuthorityService;
+import com.example.demo.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import java.util.ArrayList;
+import java.util.List;
 
 //主页控制器
 @Controller//返回同名页面
 public class MainController {
+    private static final Long ROLE_USER_AUTHORITY_ID = 2L;
+
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private AuthorityService authorityService;
+
     @GetMapping("/")
     public String root(){
         return "redirect:/index";
@@ -30,5 +47,13 @@ public class MainController {
     @GetMapping("/register")
     public String register(){
         return "register";
+    }
+    @PostMapping("/register")
+    public String registerUser(User user) {
+        List<Authority> authorities = new ArrayList<>();
+        authorities.add(authorityService.getAuthorityById(ROLE_USER_AUTHORITY_ID));
+        user.setAuthorities(authorities);
+        userService.saveUser(user);
+        return "redirect:/login";
     }
 }
