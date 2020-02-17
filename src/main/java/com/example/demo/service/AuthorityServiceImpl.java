@@ -13,7 +13,7 @@ import org.springframework.stereotype.Service;
  * @author <a href="https://waylau.com">Way Lau</a>
  */
 @Service
-public class AuthorityServiceImpl  implements AuthorityService {
+public class AuthorityServiceImpl implements AuthorityService {
 
     @Autowired
     private AuthorityRepository authorityRepository;
